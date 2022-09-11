@@ -4,18 +4,19 @@ import java.util.Arrays;
 
 public class Main {
     static Employee[] employees = new Employee[10];
-    private static int getSallary;
+
+
 
     public static void main(String[] args) {
         System.out.println ("Hello world!");
         var employee1 = new Employee ("Иван", "Иванович", "Иванов", 2, 1299910);
-        var employee2 = new Employee ("Петр", "Петрович", "Петров", 3, 1299850);
+        var employee2 = new Employee ("Петр", "Петрович", "Петров", 3, 129850);
         var employee3 = new Employee ("Сидор", "Сидорович", "Петров", 3, 1299900);
         var employee4 = new Employee ("Иван", "Сидорович", "Сидоров", 3, 1299900);
         var employee5 = new Employee ("Сидор", "Иванович", "Сидоров", 3, 1299900);
         var employee6 = new Employee ("Сидор", "Сидорович", "Иванов", 4, 1299900);
         var employee7 = new Employee ("Иван", "Петрович", "Петров", 5, 129900);
-        var employee8 = new Employee ("Петр", "Иванович", "Петров", 3, 1299900);
+        var employee8 = new Employee ("Петр", "Иванович", "Петров", 3, 12999010);
         var employee9 = new Employee ("Петр", "Петрович", "Иванов", 1, 1299900);
         var employee0 = new Employee ("Иван", "Петрович", "Петров", 1, 1299900);
         //7. Создать внутри класса с методом main поле типа Employee[10], которое будет выполнять роль «хранилища» для записей о сотрудниках.
@@ -64,7 +65,7 @@ public class Main {
     public static Employee findMinSalary() {
 
         Employee result = employees[0];
-        int minSallary = employees[0].getSallary ();
+        int minSallary = Integer.MAX_VALUE;
         for (int i = 0; i < employees.length - 1; i++) {
             if (employees[i].getSallary () < minSallary) {
                 minSallary = employees[i].getSallary ();
@@ -82,7 +83,7 @@ public class Main {
     public static Employee findMaxSalary() {
 
         Employee result = employees[0];
-        int maxSallary = employees[0].getSallary ();
+        int maxSallary = Integer.MIN_VALUE;
         for (int i = 0; i > employees.length; i++) {
             if (employees[i].getSallary () < maxSallary) {
                 maxSallary = employees[i].getSallary ();
@@ -105,7 +106,6 @@ public class Main {
     //8f. Получить Ф. И. О. всех сотрудников (вывести в консоль).
 
     public static void printEmployeeNames() {
-
         for (int i = 0; i < employees.length; i++) {
             System.out.println (( i+1) + ". "+employees[i].getFirstName ()+ " " +employees[i].getMiddleName () + " "+ employees[i].getLastName ());
         }
